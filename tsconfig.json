@@ -10,7 +10,12 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "rootDir": "./",
+    "jsx": "react-jsx",
     "declaration": true
   },
-  "include": ["shared/**/*"]
+  "include": [
+    "src/**/*",
+    "shared/**/*",
+    "electron-vite.config.ts"
+  ]
 }
