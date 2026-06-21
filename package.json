@@ -1,0 +1,18 @@
+{
+  "//": "D:/Accountiblity partner/package.json",
+  "name": "accountability-partner",
+  "version": "1.0.0",
+  "description": "Accountability Partner nightly check-in system backend and shared schema",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "firebase": "^10.12.2",
+    "firebase-admin": "^12.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "typescript": "^5.4.5"
+  }
+}

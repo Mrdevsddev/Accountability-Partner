@@ -1,0 +1,30 @@
+// D:/Accountiblity partner/firestore.rules
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper function to check if the user is authenticated and matching the target uid
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    // users/{uid}
+    match /users/{uid} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // tasks/{uid}/{taskId}
+    match /tasks/{uid}/{taskId} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // checkins/{uid}/{date}
+    match /checkins/{uid}/{date} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // settings/{uid}
+    match /settings/{uid} {
+      allow read, write: if isOwner(uid);
+    }
+  }
+}
